@@ -10,64 +10,46 @@
         maxlength="12"
         id="input"
         placeholder="Enter new task..."
-       
       />
-    </div> 
+      <button id="add" class="button add-button">Add</button>
+    </div>
     <!--end input-container-->
 
     <div class="main-container">
       <ul class="lists">
         <li class="list list-now">
           <div class="list-tag">
-            <h4>To Do</h4>
+            <h4>Now</h4>
           </div>
-          <ul class="task-list" id="now">
-            <li class="task">
-              <p>Test 1</p>
-            </li>
-           
-          </ul>
+          <ul class="task-list" id="now"></ul>
         </li>
 
         <li class="list list-future">
           <div class="list-tag">
-            <h4>Doing</h4>
+            <h4>Future</h4>
           </div>
-          <ul class="task-list" id="future">
-            <li class="task">
-              <p>Test 2</p>
-            </li>
-           
-          </ul>
+          <ul class="task-list" id="future"></ul>
         </li>
 
         <li class="list list-done">
           <div class="list-tag">
             <h4>Done</h4>
           </div>
-          <ul class="task-list" id="done">
-            <li class="task">
-              <p>Test 3</p>
-            </li>
-         
-          </ul>
+          <ul class="task-list" id="done"></ul>
         </li>
 
         <li class="list list-remove">
           <div class="list-tag">
-            <h4>Trash</h4>
+            <h4>Remove</h4>
           </div>
-          <ul class="task-list" id="remove">
-            <li class="task">
-              <p>Test 4</p>
-            </li>
-           
-          </ul>
-       
+          <ul class="task-list" id="remove"></ul>
+          <div class="column-button">
+            <button id="clear" class="button delete-button">Clear</button>
           </div>
         </li>
       </ul>
     </div>
+    <button id="empty" class="button">Empty</button>
   </body>
 
   <script src="popup.js"></script>
