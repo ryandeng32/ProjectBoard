@@ -1,0 +1,23 @@
+{
+  "name": "Project_Board",
+  "description": "Productivity Project Board",
+  "version": "1.0",
+  "manifest_version": 2,
+
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "Open Project Board"
+  },
+
+  "permissions": ["tabs", "<all_urls>"],
+
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "MacCtrl+Shift+F"
+      },
+      "description": "Opens hello.html"
+    }
+  }
+}

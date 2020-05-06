@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+.input-container {
+  display: flex;
+  width: 10rem;
+  height: 5rem;
+  margin: auto;
+  background: gray;
+  border: black solid;
+}
+
+.main-container {
+  display: flex;
+}
+
+.lists {
+  display: flex;
+  align-items: flex-start;
+  margin: 2rem auto;
+}
+
+.list {
+  width: 8rem;
+  margin: 0 1rem;
+  background: gray;
+  border: black solid;
+}
+
+.list-tag {
+  padding: 0.1rem;
+  text-align: center;
+}
+
+.list-now .list-tag {
+  background: yellow;
+}
+
+.list-future .list-tag {
+  background: blue;
+}
+
+.list-done .list-tag {
+  background: green;
+}
+
+.list-remove .list-tag {
+  background: red;
+}
+
+.task-list {
+  min-height: 3rem;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.task {
+  display: flex;
+  background: white;
+  justify-content: center;
+  vertical-align: middle;
+  list-style-type: none;
+  margin: 0.4rem;
+  height: 4rem;
+  border: black solid;
+  cursor: move;
+  text-align: center;
+}
+
+#input {
+  border: black 0.15rem solid;
+  height: 4rem;
+  width: 9rem;
+}

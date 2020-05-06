@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <script src="dragula.js"></script>
+  <link rel="stylesheet" href="dragula.css" />
+  <link rel="stylesheet" href="popup.css" />
+  <body>
+    <div class="input-container">
+      <input
+        type="text"
+        maxlength="12"
+        id="input"
+        placeholder="Enter new task..."
+       
+      />
+    </div> 
+    <!--end input-container-->
+
+    <div class="main-container">
+      <ul class="lists">
+        <li class="list list-now">
+          <div class="list-tag">
+            <h4>To Do</h4>
+          </div>
+          <ul class="task-list" id="now">
+            <li class="task">
+              <p>Test 1</p>
+            </li>
+           
+          </ul>
+        </li>
+
+        <li class="list list-future">
+          <div class="list-tag">
+            <h4>Doing</h4>
+          </div>
+          <ul class="task-list" id="future">
+            <li class="task">
+              <p>Test 2</p>
+            </li>
+           
+          </ul>
+        </li>
+
+        <li class="list list-done">
+          <div class="list-tag">
+            <h4>Done</h4>
+          </div>
+          <ul class="task-list" id="done">
+            <li class="task">
+              <p>Test 3</p>
+            </li>
+         
+          </ul>
+        </li>
+
+        <li class="list list-remove">
+          <div class="list-tag">
+            <h4>Trash</h4>
+          </div>
+          <ul class="task-list" id="remove">
+            <li class="task">
+              <p>Test 4</p>
+            </li>
+           
+          </ul>
+       
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+
+  <script src="popup.js"></script>
+</html>
