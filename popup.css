@@ -2,15 +2,59 @@
   box-sizing: border-box;
 }
 
-.input-container {
-  display: flex;
-  width: 10rem;
-  height: 5rem;
-  margin: auto;
-  background: gray;
-  border: black solid;
+body {
+  background-color: white;
+  margin: 0px;
+  padding: 0px;
+  transition: 0.5s;
 }
 
+.input-container {
+  display: flex;
+  width: 100%;
+  background: #f26d5c;
+  overflow: hidden;
+}
+
+#input {
+  display: relative;
+  color: white;
+  border-radius: 4px;
+  width: 40%;
+  margin-left: 20%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  right: 20px;
+  padding: 12px 20px;
+  font-size: 15px;
+  background-color: #e8b0a9;
+  border: none;
+  transition: 0.5s;
+}
+
+#input::placeholder {
+  color: white;
+}
+
+#input:hover::placeholder {
+  color: black;
+}
+#input:hover {
+  color: black;
+  background-color: white;
+}
+
+#input:active,
+#input:focus {
+  background-color: white;
+  border: none;
+  color: black;
+  outline: none;
+}
+/* #input:active::placeholder,
+#input:focus::placeholder {
+  color: black;
+} */
 .main-container {
   display: flex;
 }
@@ -22,31 +66,31 @@
 }
 
 .list {
-  width: 8rem;
+  width: 10rem;
   margin: 0 1rem;
-  background: gray;
-  border: black solid;
+  background: #ededeb;
 }
 
 .list-tag {
-  padding: 0.1rem;
+  padding: 1px;
   text-align: center;
+  font-size: 1rem;
 }
 
 .list-now .list-tag {
-  background: yellow;
+  background: #f4f7b0;
 }
 
 .list-future .list-tag {
-  background: blue;
+  background: #c9d9f0;
 }
 
 .list-done .list-tag {
-  background: green;
+  background: #c9f0db;
 }
 
 .list-remove .list-tag {
-  background: red;
+  background: #f0cac9;
 }
 
 .task-list {
@@ -76,20 +120,12 @@ li {
   text-align: center;
 }
 
-#input {
-  border: black 0.15rem solid;
-  height: 4rem;
-  width: 4rem;
-}
-
 .button {
   font-family: "Arimo", sans-serif;
   font-weight: 700;
   border: #000013 0.14rem solid;
   border-radius: 0.2rem;
   color: #000013;
-  padding: 0.6rem 1rem;
-  margin-bottom: 0.3rem;
   cursor: pointer;
 }
 
@@ -102,19 +138,97 @@ li {
   background-color: #fa7070;
 }
 
-.add-button {
-  background-color: #ffcb1e;
-  padding: 0 1rem;
-  height: 2.8rem;
-  width: 10rem;
-  margin-top: 0.6rem;
-}
-
-.add-button:hover {
-  background-color: #ffdd6e;
-}
-
 .column-button {
   text-align: center;
   padding: 0.1rem;
+}
+
+.add-button {
+  color: white;
+  font-size: 1rem;
+  background-color: #f26d5c;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 10px;
+  transition: 0.5s;
+}
+
+.add-button:hover {
+  background-color: #e8b0a9;
+}
+.add-button:focus,
+.add-button:active {
+  outline: none;
+}
+
+.brand {
+  margin-left: 30px;
+}
+/* The navigation menu */
+
+/* Navigation links */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 20px 20px;
+}
+
+/* The subnavigation menu */
+/* .subnav {
+  float: left;
+  overflow: hidden;
+} */
+
+/* Subnav button */
+.subnav .subnavbtn {
+  font-size: 16px;
+  height: 100%;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 14px;
+  margin-right: 10px;
+  background-color: inherit;
+  font-family: inherit;
+  transition: 0.5s;
+}
+
+/* Add a red background color to navigation links on hover */
+.subnav:hover .subnavbtn {
+  background-color: #e8b0a9;
+}
+
+/* Style the subnav content - positioned absolute */
+.subnav-content {
+  display: none;
+  opacity: 0%;
+  position: absolute;
+  left: 0;
+  background-color: #e8b0a9;
+  width: 100%;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+/* Style the subnav links */
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+/* Add a grey background color on hover */
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+/* When you move the mouse over the subnav container, open the subnav content */
+.subnav:hover .subnav-content {
+  display: block;
+  opacity: 80%;
 }

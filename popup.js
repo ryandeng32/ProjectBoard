@@ -1,16 +1,22 @@
+// input field
 const input = document.getElementById("input");
 
+// the four list elements
 const now = document.getElementById("now");
 const future = document.getElementById("future");
 const done = document.getElementById("done");
 const remove = document.getElementById("remove");
 
+// the three buttons
 const add_btn = document.getElementById("add");
 const clear_btn = document.getElementById("clear");
 const empty_btn = document.getElementById("empty");
-/* Custom Dragula JS */
 
-// -----------------------------
+/*************************************************************/
+
+// init LIST and load from localStorage
+
+// LIST_project is a list of LIST
 let LIST;
 let data = localStorage.getItem("BOARD");
 if (data) {
@@ -22,16 +28,19 @@ if (data) {
   id = 0;
 }
 
-dragula([now, future, done, remove]).on("drop", function (el) {
-  LIST[el.id].tag = el.parentNode.id;
-  localStorage.setItem("BOARD", JSON.stringify(LIST));
-});
-
 function loadList(array) {
   array.forEach(function (item) {
     addTask(item.text, item.id, item.tag, item.display);
   });
 }
+
+/*************************************************************/
+
+// Use dragula.js for drag and drop
+dragula([now, future, done, remove]).on("drop", function (el) {
+  LIST[el.id].tag = el.parentNode.id;
+  localStorage.setItem("BOARD", JSON.stringify(LIST));
+});
 
 function addTask(task, id, tag, display) {
   if (!display) {
@@ -93,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
       addTask(task, id, "future", true);
       LIST.push({
         text: task,
-        id: this.id,
+        id: id,
         tag: "future",
         display: true,
       });

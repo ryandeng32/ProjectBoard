@@ -2,16 +2,29 @@
 <html>
   <script src="dragula.js"></script>
   <link rel="stylesheet" href="dragula.css" />
+  <link rel="stylesheet" href="fontawesome-free-5.13.0-web/css/all.css" />
   <link rel="stylesheet" href="popup.css" />
   <body>
-    <div class="input-container">
-      <input
-        type="text"
-        maxlength="12"
-        id="input"
-        placeholder="Enter new task..."
-      />
-      <button id="add" class="button add-button">Add</button>
+    <!-- The navigation menu -->
+
+    <div class="navbar input-container">
+      <div class="subnav">
+        <button class="subnavbtn">
+          Lists <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="subnav-content">
+          <a href="#company">Company</a>
+          <a href="#team">Team</a>
+          <a href="#careers">Careers</a>
+        </div>
+      </div>
+      <h2 class="brand">ProjectBoard</h2>
+      <!-- uses brands style -->
+
+      <input type="text" id="input" placeholder="Enter new task..." />
+      <button id="add" class="button add-button">
+        <i class="fas fa-plus"></i>
+      </button>
     </div>
     <!--end input-container-->
 
