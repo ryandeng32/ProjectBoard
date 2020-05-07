@@ -3,31 +3,28 @@
 }
 
 body {
-  background-color: white;
   margin: 0px;
   padding: 0px;
-  transition: 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .input-container {
   display: flex;
   width: 100%;
-  background: #f26d5c;
-  overflow: hidden;
+  height: 4rem;
+  background: #db4c3f;
+  align-items: center;
 }
-
+h2 {
+  margin: 0px;
+}
 #input {
-  display: relative;
+  flex-basis: 350px;
   color: white;
   border-radius: 4px;
-  width: 40%;
-  margin-left: 20%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  right: 20px;
   padding: 12px 20px;
   font-size: 15px;
-  background-color: #e8b0a9;
+  background-color: #e27065;
   border: none;
   transition: 0.5s;
 }
@@ -74,6 +71,7 @@ body {
 .list-tag {
   padding: 1px;
   text-align: center;
+  font-weight: 100;
   font-size: 1rem;
 }
 
@@ -121,8 +119,6 @@ li {
 }
 
 .button {
-  font-family: "Arimo", sans-serif;
-  font-weight: 700;
   border: #000013 0.14rem solid;
   border-radius: 0.2rem;
   color: #000013;
@@ -144,27 +140,66 @@ li {
 }
 
 .add-button {
+  flex-basis: 100px;
   color: white;
   font-size: 1rem;
-  background-color: #f26d5c;
+  background-color: #db4c3f;
   border: none;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 20px;
-  margin-right: 10px;
-  transition: 0.5s;
+
+  transition: 0.2s;
 }
 
 .add-button:hover {
-  background-color: #e8b0a9;
+  background-color: #e27065;
 }
 .add-button:focus,
 .add-button:active {
   outline: none;
 }
 
-.brand {
-  margin-left: 30px;
+.add-list-button {
+  color: white;
+  font-size: 1rem;
+  background-color: #e27065;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  transition: 0.5s;
+}
+.add-list-button:hover {
+  background-color: #f26d5c;
+}
+.add-list-button:focus,
+.add-list-button:active {
+  outline: none;
+}
+
+.del-list-button {
+  color: white;
+  font-size: 1rem;
+  background-color: #e27065;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  transition: 0.5s;
+}
+.del-list-button:hover {
+  background-color: #f26d5c;
+}
+.del-list-button:focus,
+.del-list-button:active {
+  outline: none;
+}
+
+#brand {
+  font-weight: bolder;
+  text-align: center;
+  flex-basis: 200px;
+  flex-grow: 2;
+  padding: auto auto;
+  font-size: 20px;
 }
 /* The navigation menu */
 
@@ -177,21 +212,14 @@ li {
   padding: 20px 20px;
 }
 
-/* The subnavigation menu */
-/* .subnav {
-  float: left;
-  overflow: hidden;
-} */
-
 /* Subnav button */
 .subnav .subnavbtn {
-  font-size: 16px;
-  height: 100%;
+  font-size: 20px;
   border: none;
   outline: none;
   color: white;
-  padding: 14px 14px;
   margin-right: 10px;
+  padding: 20px 20px 21px 20px;
   background-color: inherit;
   font-family: inherit;
   transition: 0.5s;
@@ -199,7 +227,7 @@ li {
 
 /* Add a red background color to navigation links on hover */
 .subnav:hover .subnavbtn {
-  background-color: #e8b0a9;
+  background-color: #e27065;
 }
 
 /* Style the subnav content - positioned absolute */
@@ -208,7 +236,7 @@ li {
   opacity: 0%;
   position: absolute;
   left: 0;
-  background-color: #e8b0a9;
+  background-color: #e27065;
   width: 100%;
   transition: 0.5s;
   z-index: 1;
@@ -231,4 +259,8 @@ li {
 .subnav:hover .subnav-content {
   display: block;
   opacity: 80%;
+}
+
+div #editor {
+  display: none;
 }

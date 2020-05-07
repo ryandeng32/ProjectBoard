@@ -13,12 +13,17 @@
           Lists <i class="fa fa-caret-down"></i>
         </button>
         <div class="subnav-content">
-          <a href="#company">Company</a>
-          <a href="#team">Team</a>
-          <a href="#careers">Careers</a>
+          <div id="list-names"></div>
+          <button id="add-list" class="button add-list-button">
+            <i class="fas fa-plus"></i>
+          </button>
         </div>
       </div>
-      <h2 class="brand">ProjectBoard</h2>
+      <h2 id="brand"></h2>
+      <div id="editor">
+        <input type="text" maxlength="12" id="text-edit" />
+        <button id="submit" class="button submit-button">Submit</button>
+      </div>
       <!-- uses brands style -->
 
       <input type="text" id="input" placeholder="Enter new task..." />
@@ -63,6 +68,9 @@
       </ul>
     </div>
     <button id="empty" class="button">Empty</button>
+    <button id="del-list" class="button del-list-button">
+      <i class="fas fa-minus"></i>
+    </button>
   </body>
 
   <script src="popup.js"></script>
