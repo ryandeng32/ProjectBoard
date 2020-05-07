@@ -9,8 +9,6 @@
     "default_title": "Open Project Board"
   },
 
-  "permissions": ["tabs", "<all_urls>"],
-
   "commands": {
     "_execute_browser_action": {
       "suggested_key": {

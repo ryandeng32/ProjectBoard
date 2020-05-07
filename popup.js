@@ -10,13 +10,16 @@ const remove = document.getElementById("remove");
 // the three buttons
 const add_btn = document.getElementById("add");
 const clear_btn = document.getElementById("clear");
-const empty_btn = document.getElementById("empty");
+// const empty_btn = document.getElementById("empty");
 const add_list_btn = document.getElementById("add-list");
 const del_list_btn = document.getElementById("del-list");
 const submit_btn = document.getElementById("submit");
+let edit_btn = document.getElementById("edit");
 
 const list_names = document.getElementById("list-names");
+
 const brand = document.getElementById("brand");
+const brand_n_button = document.getElementById("brand-n-button");
 const editor = document.getElementById("editor");
 const text_edit = document.getElementById("text-edit");
 
@@ -32,9 +35,18 @@ let LISTS, listId, listCount;
 let list, id;
 let current_list_index;
 
+let count_data = localStorage.getItem("COUNT");
 let board_data = localStorage.getItem("BOARD");
 let index_data = localStorage.getItem("INDEX");
 
+if (count_data) {
+  listCount = JSON.parse(count_data)[0].count;
+} else {
+  listCount = 1;
+  a = [];
+  a.push({ count: listCount });
+  localStorage.setItem("COUNT", JSON.stringify(a));
+}
 if (index_data) {
   current_list_index = JSON.parse(index_data)[0].index;
 } else {
@@ -67,6 +79,7 @@ function refresh() {
   loadLISTS(LISTS);
   loadList(LISTS[current_list_index].list);
   brand.innerHTML = LISTS[current_list_index].name;
+
   id = LISTS[current_list_index].list.length;
 }
 function loadLISTS(array) {
@@ -95,14 +108,16 @@ function loadList(array) {
 dragula([now, future, done, remove]).on("drop", function (el) {
   LISTS[current_list_index].list[el.id].tag = el.parentNode.id;
   localStorage.setItem("BOARD", JSON.stringify(LISTS));
+  if (document.activeElement == input) {
+    input.blur();
+  }
 });
-
 function addTask(task, id, tag, display) {
   if (!display) {
     return;
   }
   const item = `<li class="task" id=${id}>
-        <p>${task}</p>
+        <p class="task-text">${task}</p>
       </li>`;
   if (tag == "now") {
     now.insertAdjacentHTML("beforeend", item);
@@ -128,7 +143,7 @@ function clearRemove() {
 }
 
 function addList() {
-  if (LISTS.length == 8) {
+  if (LISTS.length == 5) {
     return;
   }
   list = [];
@@ -139,11 +154,14 @@ function addList() {
   });
   listId++;
   listCount++;
+  a = [];
+  a.push({ count: listCount });
+  localStorage.setItem("COUNT", JSON.stringify(a));
   localStorage.setItem("BOARD", JSON.stringify(LISTS));
   loadLISTS(LISTS);
 }
 // add item with enter key
-document.addEventListener("keyup", function (e) {
+input.addEventListener("keyup", function (e) {
   if (e.keyCode == 13 && e.shiftKey) {
     clearRemove();
   }
@@ -164,6 +182,14 @@ document.addEventListener("keyup", function (e) {
     input.value = "";
   }
 });
+
+// add item with enter key
+text_edit.addEventListener("keyup", function (e) {
+  if (e.keyCode == 13) {
+    doEdit();
+  }
+});
+
 function delList() {
   if (LISTS.length == 1) {
     return;
@@ -182,9 +208,10 @@ function delList() {
 }
 function toggleEditor() {
   const text = brand.innerHTML;
-  text_edit.val = text;
-  brand.style.display = "none";
-  editor.style.display = "inline";
+  text_edit.value = text;
+  brand_n_button.style.display = "none";
+  editor.style.display = "flex";
+  text_edit.focus();
 }
 function doEdit() {
   const text = text_edit.value;
@@ -194,7 +221,8 @@ function doEdit() {
     localStorage.setItem("BOARD", JSON.stringify(LISTS));
     refresh();
   }
-  brand.style.display = "inline";
+
+  brand_n_button.style.display = "flex";
   editor.style.display = "none";
 }
 document.addEventListener("DOMContentLoaded", function () {
@@ -216,10 +244,10 @@ document.addEventListener("DOMContentLoaded", function () {
     input.value = "";
   });
 
-  empty_btn.addEventListener("click", function () {
-    localStorage.clear();
-    location.reload();
-  });
+  // empty_btn.addEventListener("click", function () {
+  //   localStorage.clear();
+  //   location.reload();
+  // });
 
   add_list_btn.addEventListener("click", addList);
 
@@ -235,7 +263,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(current_list_index);
   });
 
-  brand.addEventListener("click", toggleEditor);
+  edit_btn.addEventListener("click", toggleEditor);
   submit_btn.addEventListener("click", doEdit);
   del_list_btn.addEventListener("click", delList);
 });

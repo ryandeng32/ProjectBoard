@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
+  <!--dragula.js for drag and drop-->
   <script src="dragula.js"></script>
   <link rel="stylesheet" href="dragula.css" />
+  <!--fontawesome for icons-->
   <link rel="stylesheet" href="fontawesome-free-5.13.0-web/css/all.css" />
   <link rel="stylesheet" href="popup.css" />
-  <body>
-    <!-- The navigation menu -->
 
+  <body>
     <div class="navbar input-container">
       <div class="subnav">
         <button class="subnavbtn">
@@ -19,10 +20,18 @@
           </button>
         </div>
       </div>
-      <h2 id="brand"></h2>
+      <div id="brand-n-button">
+        <h2 id="brand"></h2>
+        <button id="edit" class="button edit-button">
+          <i class="fas fa-edit"></i>
+        </button>
+      </div>
+
       <div id="editor">
         <input type="text" maxlength="12" id="text-edit" />
-        <button id="submit" class="button submit-button">Submit</button>
+        <button id="submit" class="button submit-button">
+          <i class="fas fa-save"></i>
+        </button>
       </div>
       <!-- uses brands style -->
 
@@ -60,16 +69,18 @@
           <div class="list-tag">
             <h4>Remove</h4>
           </div>
-          <ul class="task-list" id="remove"></ul>
+          <ul class="task-list-remove" id="remove"></ul>
           <div class="column-button">
-            <button id="clear" class="button delete-button">Clear</button>
+            <button id="clear" class="button delete-button">
+              <i class="fas fa-trash-alt"></i>
+            </button>
           </div>
         </li>
       </ul>
     </div>
-    <button id="empty" class="button">Empty</button>
+    <!-- <button id="empty" class="button">Empty</button> -->
     <button id="del-list" class="button del-list-button">
-      <i class="fas fa-minus"></i>
+      <i class="fas fa-times-circle"></i>
     </button>
   </body>
 
