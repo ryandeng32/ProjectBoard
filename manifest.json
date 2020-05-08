@@ -1,13 +1,10 @@
 {
-  "name": "Project_Board",
+  "name": "Project Board",
   "description": "A Minimalist SCRUM board perfect for your productivity",
-  "version": "1.0",
+  "version": "1.0.1",
   "manifest_version": 2,
   "icons": {
-    "12": "pb_transparent.png",
-    "32": "pb_transparent.png",
-    "64": "pb_transparent.png",
-    "128": "pb_transparent.png"
+    "128": "icon128.png"
   },
   "browser_action": {
     "default_popup": "popup.html",
