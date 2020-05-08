@@ -1,21 +1,26 @@
 {
   "name": "Project_Board",
-  "description": "Productivity Project Board",
+  "description": "A Minimalist SCRUM board perfect for your productivity",
   "version": "1.0",
   "manifest_version": 2,
-
+  "icons": {
+    "12": "pb_transparent.png",
+    "32": "pb_transparent.png",
+    "64": "pb_transparent.png",
+    "128": "pb_transparent.png"
+  },
   "browser_action": {
     "default_popup": "popup.html",
-    "default_title": "Open Project Board"
+    "default_title": "ProjectBoard"
   },
 
   "commands": {
     "_execute_browser_action": {
       "suggested_key": {
-        "default": "Ctrl+Shift+F",
-        "mac": "MacCtrl+Shift+F"
+        "default": "Ctrl+Shift+B",
+        "mac": "MacCtrl+Shift+B"
       },
-      "description": "Opens hello.html"
+      "description": "Opens ProjectBoard"
     }
   }
 }
