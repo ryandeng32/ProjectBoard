@@ -10,8 +10,9 @@ ProjectBoard offers a visual representation of the tasks to be done. Use it to i
 Try out this chrome extension by clicking [here](https://chrome.google.com/webstore/detail/project-board/liglafjdnkknphlhlfcmdlddhmgdfdgm) 
 
 ## Built With
-* JavaScript
+* HTML, CSS, JavaScript
 * [Dragula.js](https://bevacqua.github.io/dragula/) - A drag and drop JavaScript library 
+* [Font Awesome](https://fontawesome.com/) - For icons 
 
 ## Versioning
 
