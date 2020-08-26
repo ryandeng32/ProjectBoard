@@ -2,7 +2,8 @@
 > A minimalist SCRUM board as a chrome extension built with HTML/CSS, JavaScript, and Dragula.js  
 
 > ProjectBoard offers a visual representation of the tasks to be done. Use it to isolate and organize tasks,  add new tasks and track each one through its lifecycle! 
-
+### Demo screenshot
+![demo](https://github.com/ryandeng32/ProjectBoard/blob/master/promote/Promote1.png)
 ### Installation
 
 Try out this chrome extension by clicking [here](https://chrome.google.com/webstore/detail/project-board/liglafjdnkknphlhlfcmdlddhmgdfdgm) 
